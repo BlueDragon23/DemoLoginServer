@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base_template :: template(~{::title},~{},~{::content})">
 <head>
-    <meta charset="UTF-8">
     <title>Complete Sign Up Successful</title>
-    <link rel="stylesheet" th:href="@{/css/global.css}">
 </head>
 <body>
-<div th:replace="~{header :: header}"></div>
-<div class="content">
+<div th:fragment="content" class="content">
     <h3>Sign up complete successfully</h3>
     <p>You're all done! Click the big red button to get started</p>
     <a class="button" style="background:darkred;" href="/home">Let's go!</a>

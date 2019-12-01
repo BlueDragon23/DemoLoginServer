@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base_template :: template(~{::title},~{},~{::content})">
 <head>
-    <meta charset="UTF-8">
     <title>Hello World</title>
-    <link rel="stylesheet" th:href="@{/css/global.css}">
 </head>
 <body>
-<div th:replace="~{header :: header}"></div>
-<div class="content">
+<div class="content" th:fragment="content">
     <p>Welcome to our Awesome Service!</p>
     <a class="button" href="/login">Login</a>
     <a class="button" href="/signup">Sign Up</a>

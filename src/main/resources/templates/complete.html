@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base_template :: template(~{::title},~{},~{::content})">
 <head>
-    <meta charset="UTF-8">
     <title>Complete Sign Up</title>
-    <link rel="stylesheet" th:href="@{/css/global.css}">
 </head>
 <body>
-<div th:replace="~{header :: header}"></div>
-<div class="content">
+<div th:fragment="content" class="content">
     <h3>Complete Sign Up</h3>
     <p>Enter your password here and you'll be ready to use the Awesome Service</p>
     <form class="form" action="/complete" method="post" th:object="${complete_request}">

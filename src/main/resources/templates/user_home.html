@@ -1,13 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello World</title>
-    <link rel="stylesheet" th:href="@{/css/global.css}">
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base_template :: template(_,~{},~{::content})">
 <body>
-<div th:replace="~{header :: authenticated_header}"></div>
-<div class="content">
+<div th:fragment="content" class="content">
     <h3>Awesome Service Home</h3>
     <img th:src="@{/images/cat.gif}" alt="Cat receiving pats and poking its tongue out" />
 </div>
