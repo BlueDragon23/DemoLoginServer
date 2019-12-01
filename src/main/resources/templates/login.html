@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/global.css}">
+</head>
+<body>
+<div th:replace="~{header :: header}"></div>
+<div class="content">
+    <h3>Login</h3>
+    <p>Please login to use our Awesome Service</p>
+    <form class="login-form">
+        <input id="email" type="email">
+        <label for="email">Email</label>
+        <input id="password" type="password">
+        <label for="password">Password</label>
+        <button class="button" type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
