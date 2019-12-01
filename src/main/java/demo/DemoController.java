@@ -1,6 +1,7 @@
 package demo;
 
 import demo.requests.CompleteRequest;
+import demo.requests.LoginRequest;
 import demo.requests.SignupRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,9 +21,21 @@ public class DemoController {
         return "index";
     }
 
+    @GetMapping("/home")
+    public String home() {
+        return "user_home";
+    }
+
     @GetMapping("/login")
-    public String login() {
+    public String login(Model model) {
+        model.addAttribute("login_request", new LoginRequest());
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String loginSubmit(@ModelAttribute LoginRequest loginRequest) {
+        System.out.println(String.format("Received login for %s with password %s", loginRequest.getEmail(), loginRequest.getPassword()));
+        return "user_home";
     }
 
     @GetMapping("/signup")

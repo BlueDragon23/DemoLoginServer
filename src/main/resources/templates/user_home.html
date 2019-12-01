@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Signup Successful</title>
+    <title>Hello World</title>
     <link rel="stylesheet" th:href="@{/css/global.css}">
 </head>
 <body>
-<div th:replace="~{header :: header}"></div>
+<div th:replace="~{header :: authenticated_header}"></div>
 <div class="content">
-    <h3>Sign up successful</h3>
-    <p>Your sign up has been submitted. Please check your email to finish signing up</p>
+    <h3>Awesome Service Home</h3>
+    <img th:src="@{/images/cat.gif}" alt="Cat receiving pats and poking its tongue out" />
 </div>
 </body>
 </html>

@@ -20,14 +20,6 @@ body {
     font-family: sans-serif;
 }
 
-header {
-    background: var(--dark-color);
-}
-
-header .button {
-    background-color: transparent;
-}
-
 .button {
     background-color: var(--dark-color);
     border: none;

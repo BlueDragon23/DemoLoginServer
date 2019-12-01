@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/header.css}" rel="stylesheet">
+</head>
 <body>
 <header th:fragment="header">
     <a class="button invert" href="/">Awesome Service</a>
+</header>
+<header class="authenticated-header" th:fragment="authenticated_header">
+    <a class="button invert" href="/home">Awesome Service</a>
+    <a class="button invert" href="/">Logout</a>
 </header>
 </body>
 </html>

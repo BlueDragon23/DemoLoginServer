@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="template(title,links,content)">
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="${title}">Awesome Service</title>
+    <link rel="stylesheet" href="@{/css/global.css}">
+    <link rel="stylesheet" href="@{/css/header.css}">
+    <th:block th:replace="${links}" />
+</head>
+<body>
+    <div th:replace="header :: header"></div>
+    <div class="content" th:insert="${content}"></div>
+</body>
+</html>

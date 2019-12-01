@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" th:href="@{/global.css}">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
 </head>
 <body>
 <div th:replace="~{header :: header}"></div>
 <div class="content">
     <h3>Login</h3>
     <p>Please login to use our Awesome Service</p>
-    <form class="form">
+    <form class="form" action="/login" method="post" th:object="${login_request}">
         <input id="email" name="email" type="email">
         <label for="email">Email</label>
         <input id="password" name="password" type="password">

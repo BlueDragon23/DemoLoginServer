@@ -1,0 +1,12 @@
+header {
+    background: var(--dark-color);
+}
+
+header .button {
+    background-color: transparent;
+}
+
+.authenticated-header {
+    display: flex;
+    justify-content: space-between;
+}
