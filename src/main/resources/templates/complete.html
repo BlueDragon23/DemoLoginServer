@@ -2,18 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Complete Sign Up</title>
     <link rel="stylesheet" th:href="@{/global.css}">
 </head>
 <body>
 <div th:replace="~{header :: header}"></div>
 <div class="content">
-    <h3>Login</h3>
-    <p>Please login to use our Awesome Service</p>
-    <form class="form">
-        <input id="email" name="email" type="email">
+    <h3>Complete Sign Up</h3>
+    <p>Enter your password here and you'll be ready to use the Awesome Service</p>
+    <form class="form" action="/complete" method="post" th:object="${complete_request}">
+        <input readonly type="email" id="email" name="email" th:value="${complete_request.email}">
         <label for="email">Email</label>
-        <input id="password" name="password" type="password">
+        <input type="password" id="password" name="password">
         <label for="password">Password</label>
         <input class="button" type="submit" value="Submit">
     </form>

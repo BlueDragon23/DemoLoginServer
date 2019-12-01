@@ -21,6 +21,11 @@ public class SignupServiceImpl implements SignupService {
         }
     }
 
+    @Override
+    public void completeSignup(String email, String password) {
+        System.out.println(String.format("Completing signup with email %s and password %s", email, password));
+    }
+
     private void sendEmail(String email) throws MessagingException {
         Properties prop = getSmtpProperties();
         Session session = Session.getInstance(prop);

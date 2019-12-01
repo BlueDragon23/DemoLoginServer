@@ -1,10 +1,10 @@
 package demo;
 
+import demo.requests.CompleteRequest;
+import demo.requests.SignupRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class DemoController {
@@ -35,5 +35,18 @@ public class DemoController {
     public String signupSubmit(@ModelAttribute SignupRequest signupRequest) {
         signupService.doSignup(signupRequest.getEmail());
         return "signup_successful";
+    }
+
+    @GetMapping("/complete")
+    public String complete(@RequestParam String email, Model model) {
+        CompleteRequest completeRequest = new CompleteRequest();
+        completeRequest.setEmail(email);
+        model.addAttribute("complete_request", completeRequest);
+        return "complete";
+    }
+
+    @PostMapping("/complete")
+    public String completeSubmit(@ModelAttribute CompleteRequest completeRequest) {
+        return "complete_successful";
     }
 }

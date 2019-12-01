@@ -40,12 +40,12 @@ header .button {
     cursor: pointer;
 }
 
-.login-form {
+.form {
     display: flex;
     flex-direction: column;
     margin: 12px 0;
 }
 
-.login-form label {
+.form label {
     margin-bottom: 8px;
 }

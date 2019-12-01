@@ -1,4 +1,4 @@
-package demo;
+package demo.requests;
 
 public class SignupRequest {
     private String email;

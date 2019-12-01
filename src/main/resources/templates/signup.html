@@ -10,7 +10,7 @@
 <div class="content">
     <h3>Sign Up</h3>
     <p>Please sign up to use our Awesome Service. Just add your email here and we'll send you a message</p>
-    <form action="/signup" method="post" class="login-form" th:object="${signup_request}">
+    <form action="/signup" method="post" class="form" th:object="${signup_request}">
         <input id="email" type="email" name="email">
         <label for="email">Email</label>
         <input class="button" type="submit" value="Submit">
