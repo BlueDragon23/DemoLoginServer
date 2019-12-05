@@ -38,7 +38,6 @@ public class SignupServiceImpl implements SignupService {
         Session session = Session.getInstance(prop, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                System.out.println(String.format("Sending email with auth %s:%s", username, password));
                 return new PasswordAuthentication(username, password);
             }
         });
