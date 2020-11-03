@@ -3,12 +3,16 @@ package demo;
 import demo.requests.CompleteRequest;
 import demo.requests.LoginRequest;
 import demo.requests.SignupRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class DemoController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(DemoController.class);
 
     private final SignupService signupService;
 
@@ -34,7 +38,7 @@ public class DemoController {
 
     @PostMapping("/login")
     public String loginSubmit(@ModelAttribute LoginRequest loginRequest) {
-        System.out.println(String.format("Received login for %s with password %s", loginRequest.getEmail(), loginRequest.getPassword()));
+        LOGGER.debug("Received login for {} with password {}", loginRequest.getEmail(), loginRequest.getPassword());
         return "user_home";
     }
 

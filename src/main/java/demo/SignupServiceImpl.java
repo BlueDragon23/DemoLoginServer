@@ -1,5 +1,7 @@
 package demo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +15,8 @@ import java.util.Properties;
 @Component
 public class SignupServiceImpl implements SignupService {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(SignupServiceImpl.class);
+
     @Value("${email.username}")
     private String username;
     @Value("${email.password}")
@@ -20,7 +24,7 @@ public class SignupServiceImpl implements SignupService {
 
     @Override
     public void doSignup(String email) {
-        System.out.println("Signing up with " + email);
+        LOGGER.debug("Signing up with {}", email);
         try {
             sendEmail(email);
         } catch (MessagingException e) {
@@ -30,7 +34,7 @@ public class SignupServiceImpl implements SignupService {
 
     @Override
     public void completeSignup(String email, String password) {
-        System.out.println(String.format("Completing signup with email %s and password %s", email, password));
+        LOGGER.debug("Completing signup with email {} and password {}", email, password);
     }
 
     private void sendEmail(String email) throws MessagingException {
