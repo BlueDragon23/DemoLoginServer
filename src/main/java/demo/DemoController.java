@@ -1,13 +1,15 @@
 package demo;
 
 import demo.requests.CompleteRequest;
-import demo.requests.LoginRequest;
 import demo.requests.SignupRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class DemoController {
@@ -30,17 +32,17 @@ public class DemoController {
         return "user_home";
     }
 
-    @GetMapping("/login")
-    public String login(Model model) {
-        model.addAttribute("login_request", new LoginRequest());
-        return "login";
-    }
-
-    @PostMapping("/login")
-    public String loginSubmit(@ModelAttribute LoginRequest loginRequest) {
-        LOGGER.debug("Received login for {} with password {}", loginRequest.getEmail(), loginRequest.getPassword());
-        return "user_home";
-    }
+//    @GetMapping("/login")
+//    public String login(Model model) {
+//        model.addAttribute("login_request", new LoginRequest());
+//        return "login";
+//    }
+//
+//    @PostMapping("/login")
+//    public String loginSubmit(@ModelAttribute LoginRequest loginRequest) {
+//        LOGGER.debug("Received login for {} with password {}", loginRequest.getEmail(), loginRequest.getPassword());
+//        return "user_home";
+//    }
 
     @GetMapping("/signup")
     public String signup(Model model) {
